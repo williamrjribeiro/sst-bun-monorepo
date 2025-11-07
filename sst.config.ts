@@ -3,10 +3,15 @@
 export default $config({
   app(input) {
     return {
-      name: "monorepo-template",
+      name: "sst-bun-monorepo",
       removal: input?.stage === "production" ? "retain" : "remove",
       protect: ["production"].includes(input?.stage),
       home: "aws",
+      providers: {
+        aws: {
+          profile: input.stage === "production" ? "acme-production" : "acme-dev"
+        }
+      }
     };
   },
   async run() {

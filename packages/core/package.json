@@ -1,9 +1,9 @@
 {
-  "name": "@monorepo-template/core",
+  "name": "@sst-bun-monorepo/core",
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "test": "sst shell vitest"
+    "test": "bun test"
   },
   "exports": {
     "./*": [
@@ -15,6 +15,13 @@
     "sst": "*"
   },
   "devDependencies": {
-    "vitest": "^2"
-  }
+    "@biomejs/biome": "catalog:",
+    "@tsconfig/bun": "catalog:",
+    "@types/bun": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "bun": "1.3.1"
+  },
+  "packageManager": "bun@1.3.1"
 }
