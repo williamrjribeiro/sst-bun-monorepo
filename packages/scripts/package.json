@@ -1,22 +1,23 @@
 {
-  "name": "@sst-bun-monorepo/scripts",
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "shell": "sst shell bun"
-  },
-  "dependencies": {
-    "@sst-bun-monorepo/core": "*",
-    "sst": "*"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "catalog:",
-    "@tsconfig/bun": "catalog:",
-    "@types/bun": "catalog:",
-    "typescript": "catalog:"
-  },
-  "engines": {
-    "bun": "1.3.1"
-  },
-  "packageManager": "bun@1.3.1"
+	"name": "@sst-bun-monorepo/scripts",
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"shell": "sst shell bun",
+		"code:check": "biome check --write"
+	},
+	"dependencies": {
+		"@sst-bun-monorepo/core": "*",
+		"sst": "*"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "catalog:",
+		"@tsconfig/bun": "catalog:",
+		"@types/bun": "catalog:",
+		"typescript": "catalog:"
+	},
+	"engines": {
+		"bun": "1.3.1"
+	},
+	"packageManager": "bun@1.3.1"
 }
