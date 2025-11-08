@@ -9,4 +9,7 @@ export const myApi = new sst.aws.Function("MyApi", {
 	runtime: "provided.al2023",
 	link: [bucket],
 	layers: [x64LayerArn],
+	environment: {
+		BUCKET_NAME: bucket.name,
+	},
 });

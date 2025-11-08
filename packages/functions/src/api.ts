@@ -1,5 +1,5 @@
 import { Example } from "@sst-bun-monorepo/core/example";
-import { Resource } from "sst";
+// import { Resource } from "sst";
 
 export default {
 	async fetch(request: Request): Promise<Response> {
@@ -8,7 +8,8 @@ export default {
 			request.headers.get("x-amzn-function-arn"),
 		);
 
-		const message = `${Example.hello()} Linked to ${Resource.MyBucket.name}.`;
+		// TODO: Figure out a way to make SST Resources available to the Lambda function.
+		const message = `${Example.hello()} Work around to access SST Resources: ${process.env["BUCKET_NAME"]}.`;
 
 		return new Response(message, {
 			status: 200,
