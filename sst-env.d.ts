@@ -14,6 +14,10 @@ declare module "sst" {
 			name: string;
 			type: "sst.aws.Bucket";
 		};
+		MyLambdaLayers: {
+			name: string;
+			type: "sst.aws.Bucket";
+		};
 	}
 }
 /// <reference path="sst-env.d.ts" />

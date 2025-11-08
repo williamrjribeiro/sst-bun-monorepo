@@ -15,9 +15,10 @@
 	"scripts": {
 		"aws:sso": "aws sso login --sso-session=acme",
 		"aws:check": "aws sts get-caller-identity --profile=fe-prd",
-		"code:check": "bun --filter '*' code:check",
-		"test": "bun --filter '*' test",
-		"deploy:prd": "sst deploy --stage production"
+		"code:check": "biome check --write && bun --filter '*' code:check",
+		"deploy:prd": "sst deploy --stage production",
+		"remove:prd": "sst remove --stage production",
+		"test": "bun --filter '*' test"
 	},
 	"dependencies": {
 		"sst": "^3"

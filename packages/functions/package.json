@@ -3,17 +3,16 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
+		"build": "bun build src/api.ts --outdir dist",
 		"code:check": "biome check --write",
 		"test": "bun test"
 	},
 	"dependencies": {
 		"@sst-bun-monorepo/core": "*",
-		"aws-lambda": "^1.0.7",
 		"sst": "*"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "catalog:",
-		"@types/aws-lambda": "^8",
 		"@tsconfig/bun": "catalog:",
 		"@types/bun": "catalog:",
 		"typescript": "catalog:"
