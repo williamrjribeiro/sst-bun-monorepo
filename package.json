@@ -13,11 +13,15 @@
 		}
 	},
 	"scripts": {
-		"aws:sso": "aws sso login --sso-session=acme",
+		"all:build": "bun --filter '*' build",
+		"all:code:check": "bun --filter '*' code:check",
+		"all:clean": "bun --filter '*' clean",
+		"aws:sso": "aws sso login --sso-session=fire-emblem",
 		"aws:check": "aws sts get-caller-identity --profile=fe-prd",
 		"code:check": "biome check --write && bun --filter '*' code:check",
-		"deploy:prd": "sst deploy --stage production",
+		"deploy:prd": "bun all:code:check && bun all:clean && bun all:build && bun sst:deploy:prd",
 		"remove:prd": "sst remove --stage production",
+		"sst:deploy:prd": "sst deploy --stage production",
 		"test": "bun --filter '*' test"
 	},
 	"dependencies": {

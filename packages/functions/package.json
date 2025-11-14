@@ -5,7 +5,8 @@
 	"scripts": {
 		"build": "bun build src/api.ts --outdir dist",
 		"code:check": "biome check --write",
-		"test": "bun test"
+		"test": "bun test",
+		"clean": "rm -rf dist"
 	},
 	"dependencies": {
 		"@sst-bun-monorepo/core": "*",
