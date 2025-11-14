@@ -4,7 +4,8 @@
 	"type": "module",
 	"scripts": {
 		"shell": "sst shell bun",
-		"code:check": "biome check --write"
+		"lint": "biome check --write",
+		"types": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@sst-bun-monorepo/core": "*",

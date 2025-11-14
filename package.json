@@ -14,12 +14,13 @@
 	},
 	"scripts": {
 		"all:build": "bun --filter '*' build",
-		"all:code:check": "bun --filter '*' code:check",
 		"all:clean": "bun --filter '*' clean",
+		"all:lint": "bun --filter '*' lint",
+		"all:types": "bun --filter '*' types",
 		"aws:sso": "aws sso login --sso-session=fire-emblem",
 		"aws:check": "aws sts get-caller-identity --profile=fe-prd",
-		"code:check": "biome check --write && bun --filter '*' code:check",
-		"deploy:prd": "bun all:code:check && bun all:clean && bun all:build && bun sst:deploy:prd",
+		"lint": "biome check --write && bun --filter '*' lint",
+		"deploy:prd": "bun all:lint && bun all:types && bun all:clean && bun all:build && bun sst:deploy:prd",
 		"remove:prd": "sst remove --stage production",
 		"sst:deploy:prd": "sst deploy --stage production",
 		"test": "bun --filter '*' test"

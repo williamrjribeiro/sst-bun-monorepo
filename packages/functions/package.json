@@ -4,9 +4,10 @@
 	"type": "module",
 	"scripts": {
 		"build": "bun build src/api.ts --outdir dist",
-		"code:check": "biome check --write",
+		"clean": "rm -rf dist",
+		"lint": "biome check --write",
 		"test": "bun test",
-		"clean": "rm -rf dist"
+		"types": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@sst-bun-monorepo/core": "*",

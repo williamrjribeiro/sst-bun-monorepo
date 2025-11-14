@@ -4,7 +4,8 @@
 	"version": "0.0.0",
 	"scripts": {
 		"test": "bun test",
-		"code:check": "biome check --write"
+		"lint": "biome check --write",
+		"types": "tsc --noEmit"
 	},
 	"exports": {
 		"./*": [
